@@ -54,7 +54,7 @@ describe("connectivity", function () {
         return done(err);
       expect(version.version).to.be.ok;
       done();
-    })
+    });
   });
 
   it("should get the version (no callback)", function (done) {
