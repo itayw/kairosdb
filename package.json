@@ -1,6 +1,6 @@
 {
   "name": "kairosdb",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Itay Weinberger <itay@joo.la>",
   "description": "NodeJS library for communication with KariosDB",
   "engine": "node >= 0.10.x",
@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "test": "make test",
-    "coveralls": "make test-coveralls"
+    "coveralls": "make coveralls"
   },
   "dependencies": {
     "request": "*"
