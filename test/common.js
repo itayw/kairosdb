@@ -10,6 +10,6 @@ chai.use(require('sinon-chai'));
 global.expect = chai.expect;
 
 global.options = {
-  host: '192.168.0.6',
-  port: 8082
+  host: 'kairosdb.joola.io',
+  port: 8080
 };

@@ -67,7 +67,6 @@ describe("datapoints", function () {
     });
   });
 
-
   it("should fail on invalid timestamp", function (done) {
     var client = kdb.init(global.options.host, global.options.port);
 
@@ -86,6 +85,28 @@ describe("datapoints", function () {
       if (err)
         return done();
       return done(new Error('This is wrong, the previous call should have resulted with error.'));
+    });
+  });
+
+  it("should save multilevel dimensions", function (done) {
+    var client = kdb.init(global.options.host, global.options.port);
+
+    var data = [
+      {
+        "name": "metric_for_or2",
+        "timestamp": new Date().getTime(),
+        "value": 321,
+        "tags": {
+          "host": "server2",
+          "realm":  "unknown"
+        }
+      }
+    ];
+
+    client.datapoints(data, function (err, result) {
+      if (err)
+        return done(err);
+      return done();
     });
   });
 });

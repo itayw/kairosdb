@@ -8,7 +8,7 @@ describe("query", function () {
       "metrics": [
         {
           "tags": {},
-          "name": "metric_for_or",
+          "name": "metric_for_or2",
           "aggregators": [
             {
               "name": "sum",
@@ -31,6 +31,7 @@ describe("query", function () {
     client.query(query, function (err, result) {
       if (err)
         return done(err);
+      
       done();
     });
   });
