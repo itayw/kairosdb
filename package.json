@@ -1,0 +1,19 @@
+{
+  "name": "kairosdb",
+  "version": "0.0.1",
+  "dependencies": {
+    "request": "~2.34.0"
+  },
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*",
+    "istanbul": "*",
+    "sinon": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "expect": "*",
+    "underscore": "*",
+    "jshint": "*"
+  },
+  "main": "lib/kairosdb.js"
+}

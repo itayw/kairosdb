@@ -1,0 +1,14 @@
+{
+  "expr": true,
+  "indent": 2,
+  "globals": [
+    "require",
+    "__dirname",
+    "exports",
+    "global",
+    "process",
+
+    "joola",
+    "window"
+  ]
+}
