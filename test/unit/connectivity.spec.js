@@ -2,11 +2,11 @@ var kdb = require('../../lib/kairosdb');
 
 describe("connectivity", function () {
   it("should access kairosdb without problems", function (done) {
-    var client = kdb.init(global.options.host,global.options.port);
+    var client = kdb.init(global.options.host, global.options.port);
     client.version(function (err, version) {
       if (err)
         return done(err);
-      version = version.indexOf('KairosDB');
+      version = version.version.indexOf('KairosDB');
       expect(version).to.equal(0);
       done();
     });
@@ -17,12 +17,19 @@ describe("connectivity", function () {
     client.version(function (err, version) {
       if (err)
         return done();
+      try {
+        version = version.version.indexOf('KairosDB');
+        expect(version).to.equal(0);
+      }
+      catch (ex) {
+        return done();
+      }
       return done(new Error('This is wrong, the previous call should have resulted with error.'));
     });
   });
 
   it("should support specific api versions", function (done) {
-    var client = kdb.init(global.options.host,global.options.port, {apiversion: 'v3'});
+    var client = kdb.init(global.options.host, global.options.port, {apiversion: 'v3'});
     client.version(function (err, version) {
       if (err)
         return done();
@@ -32,11 +39,27 @@ describe("connectivity", function () {
 
   it("should output debug info", function (done) {
     //This is shown in coverage report
-    var client = kdb.init(global.options.host,global.options.port, {debug:true});
+    var client = kdb.init(global.options.host, global.options.port, {debug: true});
     client.version(function (err, version) {
       if (err)
         return done(err);
       return done();
     });
+  });
+
+  it("should get the version", function (done) {
+    var client = kdb.init(global.options.host, global.options.port, {debug: false});
+    client.version(function (err, version) {
+      if (err)
+        return done(err);
+      expect(version.version).to.be.ok;
+      done();
+    })
+  });
+
+  it("should get the version (no callback)", function (done) {
+    var client = kdb.init(global.options.host, global.options.port, {debug: false});
+    client.version();
+    done();
   });
 });
