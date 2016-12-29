@@ -1,6 +1,6 @@
 {
   "name": "kairosdb",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Itay Weinberger <itay@joo.la>",
   "description": "NodeJS library for communication with KairosDB",
   "engine": "node >= 0.10.x",
