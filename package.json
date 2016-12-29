@@ -2,13 +2,13 @@
   "name": "kairosdb",
   "version": "0.0.3",
   "author": "Itay Weinberger <itay@joo.la>",
-  "description": "NodeJS library for communication with KariosDB",
+  "description": "NodeJS library for communication with KairosDB",
   "engine": "node >= 0.10.x",
   "repository": {
     "type": "git",
-    "url": "https://github.com/itayw/kariosdb.git"
+    "url": "https://github.com/itayw/kairosdb.git"
   },
-  "bugs": "https://github.com/itayw/kariosdb/issues",
+  "bugs": "https://github.com/itayw/kairosdb/issues",
   "contributors": [
     {
       "name": "Itay Weinberger",
@@ -37,7 +37,7 @@
   },
   "main": "lib/kairosdb.js",
   "keywords": [
-    "kariosdb",
+    "kairosdb",
     "cassandra"
   ],
   "license": "MIT"
