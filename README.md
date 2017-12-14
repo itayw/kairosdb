@@ -80,6 +80,7 @@ Create a new client connection. `host` default to `localhost` and `port` default
 `options` is an object with the following possible properties:
 
 - `debug`: enable print out to console of debug information.
+- `https`: toggle http/https request protocol
 
 
 ### Contributing
